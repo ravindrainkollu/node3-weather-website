@@ -14,8 +14,10 @@ const forecast = (latitude, longitude,  callback) => {
             callback('Unable to get forecast. Try searching with different location.', undefined)
         }
         else {
-            const data = body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + 
-                                ' degrees out there. It feels like ' + body.current.feelslike + ' degrees.'
+            const data = body.current.weather_descriptions[0] + '. It is currently ' + 
+                         body.current.temperature + ' degrees out there. It feels like ' + 
+                         body.current.feelslike + ' degrees. The humidity is ' + 
+                         body.current.humidity + '%.'  
             callback(undefined, data)
         }    
     } )
